@@ -143,6 +143,7 @@ hands.onResults(onResults);
 const camera = new Camera(videoElement, {
   onFrame: async () => {
     await hands.send({ image: videoElement });
+    resizeCanvas();
   },
 });
 camera.start();

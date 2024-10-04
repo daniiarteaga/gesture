@@ -16,7 +16,7 @@ function updateButtonState(button, isEnabled) {
 
 // Variables para controlar el estado de los LEDs
 let previousX = null; // Posición X anterior para el movimiento
-let movementThreshold = 0.05; // Umbral para detectar movimiento significativo
+let movementThreshold = 0.03; // Umbral para detectar movimiento significativo
 
 // Función para verificar si un dedo está levantado
 function isFingerRaised(landmarks, fingerIndex) {

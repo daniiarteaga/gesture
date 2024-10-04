@@ -1,7 +1,7 @@
 // Obtener elementos de los botones
 const led1Button = document.getElementById('toggle-led1');
 const led2Button = document.getElementById('toggle-led2');
-const led3Button = document.getElementById('toggle-led3');
+// const led3Button = document.getElementById('toggle-led3');
 
 // Función para actualizar el estado del botón y el estilo
 function updateButtonState(button, isEnabled) {
@@ -17,8 +17,8 @@ function updateButtonState(button, isEnabled) {
 // Variables para controlar el estado de los LEDs
 let previousX = null; // Posición X anterior para el movimiento horizontal
 let previousY = null; // Posición Y anterior para el movimiento vertical
-let movementThresholdX = 0.02; // Umbral para detectar movimiento horizontal significativo
-let movementThresholdY = 0.02; // Umbral para detectar movimiento vertical significativo
+let movementThresholdX = 0.03; // Umbral para detectar movimiento horizontal significativo
+let movementThresholdY = 0.03; // Umbral para detectar movimiento vertical significativo
 
 // Función para verificar si un dedo está levantado
 function isFingerRaised(landmarks, fingerIndex) {

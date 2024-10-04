@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>GESTURE GENIUS</title>
+
+  <!-- Carga de bibliotecas de Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+
+  <!-- Carga del script -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/script.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700|Raleway:400,700&display=swap" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+ 
+</head>
+<style>
+.button-on {
+  background-color: green;
+  color: white;
+}
+
+.button-off {
+  background-color: red;
+  color: white;
+}
+</style>
+<script>
+  // Verifica si el usuario está autenticado
+  firebase.auth().onAuthStateChanged((user) => {
+    if (!user) {
+      // Si no está autenticado, redirige al usuario a la página de inicio de sesión
+      window.location.href = "index.html";
+    }
+  });
+</script>
+<body class="sub_page">
+
+  <div class="hero_area">
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <span>GESTOS</span>
+          </a>
+          <div class="navbar-collapse" id="">
+            <div class="custom_menu-btn">
+              <button onclick="openNav()">
+                <span class="s-1"></span>
+                <span class="s-2"></span>
+                <span class="s-3"></span>
+              </button>
+            </div>
+            <div id="myNav" class="overlay">
+              <div class="overlay-content">
+                <span id="user-status" style="color: white;"></span> <!-- Estado del usuario -->
+
+                <a href="index.html">INICIO</a> <!-- Enlace al inicio -->
+                <a href="gestos.html" id="gestos-link">GESTOS</a> <!-- Enlace a la página de gestos -->
+                <a href="acercade.html">ACERCA DE </a> <!-- Enlace a la página "Acerca de" -->
+                <a href="contactenos.html">CONTACTENOS</a> <!-- Enlace a la página de contacto -->
+                <div id="auth-status" class="auth-status">
+                  <button id="logout-button" style="display:none;">CERRAR SESION</button> <!-- Botón para cerrar sesión -->
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+  </div>
+
+  <section class="contact_section layout_padding">
+    <div class="container">
+      <div class="d-flex"></div>
+      <div class="row">
+        <div class="col-md-6">
+          <video class="input_video" style="display:none;"></video>
+          <canvas class="output_canvas" width="640px" height="480px"></canvas>
+        </div>
+        <div class="col-md-6">
+          <button id="toggle-led1" class="toggle1 button-off">Luz 1</button>
+          <button id="toggle-led2" class="toggle2 button-off">Luz 2</button>
+          <button id="toggle-led3" class="toggle3 button-off">Luz 3</button>
+          <div class="toggle-btn active" id="act">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="info_section layout_padding-top">
+    <div class="info_logo-box">
+      <h2>GESTURE GENIUS</h2>
+    </div>
+    <div class="container layout_padding2">
+      <div class="row">
+        <div class="col-md-3">
+          <h5>Acerca de</h5>
+          <p>Tu poderoso aliado para iluminar tu camino mediante comandos de voz y gestos.</p>
+        </div>
+        <div class="col-md-3">
+          <h5>Link utiles</h5>
+          <ul>
+            <li><a href="">Video juegos</a></li>
+            <li><a href="">Control remoto</a></li>
+            <li><a href="">Controlador 3D</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Contactenos</h5>
+          <p>Contactenos para resolver sus dudas</p>
+        </div>
+        <div class="col-md-3">
+          <div class="subscribe_container">
+            <h5>Noticias</h5>
+            <div class="form_container">
+              <form action="">
+                <input type="email" placeholder="Enter your email">
+                <button type="submit">Suscribirse</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="social_container">
+        <div class="social-box">
+          <a href=""><img src="images/fb.png" alt=""></a>
+          <a href=""><img src="images/twitter.png" alt=""></a>
+          <a href=""><img src="images/instagram.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-fluid footer_section">
+    <p>&copy; 2024 Todos los derechos reservados</p>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.1/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.1/control_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.1/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.1/hands.js" crossorigin="anonymous"></script>
+  <script src="js/camara.js"></script>
+
+</body>
+</html>

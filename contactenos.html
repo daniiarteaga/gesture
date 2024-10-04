@@ -1,0 +1,217 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+  
+  <meta charset="utf-8" /> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  
+  <!-- Metadatos para móviles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> <!-- Configura la vista para dispositivos móviles -->
+  
+  <!-- Metadatos del sitio -->
+  <meta name="keywords" content="" /> <!-- Define palabras clave del sitio -->
+  <meta name="description" content="" /> <!-- Define la descripción del sitio -->
+  <meta name="author" content="" /> <!-- Define el autor del sitio -->
+
+  <title>GESTURE GENIUS</title> <!-- Establece el título del documento -->
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" /> <!-- Enlaza la hoja de estilos de Bootstrap -->
+  
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700|Raleway:400,700&display=swap" rel="stylesheet" /> <!-- Enlaza fuentes de Google Fonts -->
+  
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" /> <!-- Enlaza la hoja de estilos personalizada -->
+  
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" /> <!-- Enlaza la hoja de estilos responsive -->
+
+  <!-- Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script> <!-- Incluye Firebase (biblioteca JavaScript para aplicaciones web) -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script> <!-- Incluye Firebase Authentication (autenticación de Firebase) -->
+  <script src="js/jquery-3.4.1.min.js"></script> <!-- Incluye jQuery (biblioteca de JavaScript) -->
+  <script src="js/bootstrap.js"></script> <!-- Incluye Bootstrap (biblioteca de CSS y JS para diseño responsivo) -->
+  <script src="js/script.js"></script> <!-- Incluye script personalizado -->
+
+</head>
+
+<body class="sub_page"> <!-- Cuerpo del documento con clase "sub_page" -->
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              CONTACTENOS <!-- Título del navbar -->
+            </span>
+          </a>
+
+          <div class="navbar-collapse" id="">
+            <div class="custom_menu-btn">
+              <button onclick="openNav()">
+                <span class="s-1"> </span>
+                <span class="s-2"> </span>
+                <span class="s-3"> </span>
+              </button>
+            </div>
+            <div id="myNav" class="overlay">
+              <div class="overlay-content">
+                <span id="user-status" style="color: white;"></span> <!-- Estado del usuario -->
+
+                <a href="index.html">INICIO</a> <!-- Enlace al inicio -->
+                <a href="gestos.html" id="gestos-link">GESTOS</a> <!-- Enlace a la página de gestos -->
+                <a href="acercade.html">ACERCA DE </a> <!-- Enlace a la página "Acerca de" -->
+                <a href="contactenos.html">CONTACTENOS</a> <!-- Enlace a la página de contacto -->
+                <div id="auth-status" class="auth-status">
+                  <button id="logout-button" style="display:none;">CERRAR SESION</button> <!-- Botón para cerrar sesión -->
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- contact section -->
+  <section class="contact_section layout_padding">
+    <div class="contact-container">
+      <div class="d-flex justify-content-center">
+        <h2>
+          Contact Us <!-- Título de la sección de contacto -->
+        </h2>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+
+          <form action="https://formspree.io/f/mpzvvbgj" method="POST"> <!-- Formulario de contacto con Formspre.io como destino -->
+            <div class="contact_form-container">
+              <div>
+                <div>
+                  <input type="text" placeholder="Nombre" name="name"> <!-- Campo para ingresar el nombre -->
+                </div>
+                <div>
+                  <input type="text" placeholder="Telefono"> <!-- Campo para ingresar el teléfono (sin nombre específico) -->
+                </div>
+                <div>
+                  <input type="email" placeholder="Email" name="email"> <!-- Campo para ingresar el correo -->
+                </div>
+                <div class="mt-5">
+                  <input type="text" placeholder="Mensaje" name="message"> <!-- Campo para ingresar el mensaje -->
+                </div>
+                <div class="mt-5">
+                  <button type="submit">
+                    send <!-- Botón de enviar -->
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end contact section -->
+
+  <!-- info section -->
+  <section class="info_section layout_padding-top">
+    <div class="info_logo-box">
+      <h2>
+        GESTURE GENIUS <!-- Título del logo -->
+      </h2>
+    </div>
+    <div class="container layout_padding2">
+      <div class="row">
+        <div class="col-md-3">
+          <h5>
+            Acerca de <!-- Título de la sección Acerca de -->
+          </h5>
+          <p>
+            Tu poderoso aliado para iluminar tu camino mediante comandos de voz y gestos. Descubre una experiencia única y moderna al controlar tus luces de forma intuitiva y sin esfuerzo. <!-- Descripción -->
+          </p>
+        </div>
+        <div class="col-md-3">
+          <h5>
+            Link utiles <!-- Título de la sección Links útiles -->
+          </h5>
+          <ul>
+            <li>
+              <a href="">
+                Video juegos <!-- Enlace a video juegos (sin URL específica) -->
+              </a>
+            </li>
+            <li>
+              <a href="">
+                Control remoto <!-- Enlace a control remoto (sin URL específica) -->
+              </a>
+            </li>
+            <li>
+              <a href="">
+                Controlador 3D <!-- Enlace a controlador 3D (sin URL específica) -->
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>
+            Contactenos <!-- Título de la sección Contactenos -->
+          </h5>
+          <p>
+            Contactenos para resolver sus dudas <!-- Descripción -->
+          </p>
+        </div>
+        <div class="col-md-3">
+
+          <div class="subscribe_container">
+            <h5>
+              Noticias <!-- Título de la sección Noticias -->
+            </h5>
+            <div class="form_container">
+              <form action="">
+                <input type="email" placeholder="Enter your email"> <!-- Campo para ingresar el correo -->
+                <button type="submit">
+                  Suscribirse <!-- Botón para suscribirse -->
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="social_container">
+
+        <div class="social-box">
+          <a href="">
+            <img src="images/fb.png" alt=""> <!-- Icono de Facebook -->
+          </a>
+
+          <a href="">
+            <img src="images/twitter.png" alt=""> <!-- Icono de Twitter -->
+          </a>
+
+          <a href="">
+            <img src="images/instagram.png" alt=""> <!-- Icono de Instagram -->
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+    <p>
+      &copy; 2024 Todos los derechos reservados <!-- Derechos de autor -->
+    </p>
+  </section>
+  <!-- footer section -->
+
+</body>
+
+</html>

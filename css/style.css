@@ -1,0 +1,802 @@
+body {
+  font-family: 'Raleway', sans-serif; /* Usamos la fuente Raleway para todo el texto del cuerpo */
+  color: #0c0c0c; /* El color del texto es un tono oscuro */
+}
+
+.logoapp {
+  width: 100px; /* Ajustamos el tamaño del logo a 100px de ancho */
+  height: auto; /* Mantenemos la proporción del logo */
+  margin: 10px; /* Añadimos un margen alrededor del logo */
+}
+
+.layout_margin {
+  margin: 90px 0; /* Margen superior e inferior de 90px */
+}
+
+.layout_padding {
+  padding: 90px 0; /* Relleno superior e inferior de 90px */
+}
+
+.layout_padding2 {
+  padding: 45px 0; /* Relleno superior e inferior de 45px */
+}
+
+.layout_padding2-top {
+  padding-top: 45px; /* Relleno solo en la parte superior de 45px */
+}
+
+.layout_padding2-bottom {
+  padding-bottom: 45px; /* Relleno solo en la parte inferior de 45px */
+}
+
+.layout_padding-top {
+  padding-top: 90px; /* Relleno solo en la parte superior de 90px */
+}
+
+.layout_padding-bottom {
+  padding-bottom: 90px; /* Relleno solo en la parte inferior de 90px */
+}
+
+.hero_next_section-margin {
+  margin-top: 100px; /* Margen superior de 100px */
+}
+
+/* Sección del encabezado */
+.hero_area {
+  height: 100vh; /* Altura del 100% de la ventana del navegador */
+  position: relative; /* Posición relativa para superponer elementos */
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #f2f7fd), color-stop(45%, #1d1e31)); /* Gradiente para navegadores WebKit */
+  background: linear-gradient(to right, #da6714 50%, #da6714 45%); /* Gradiente de izquierda a derecha */
+}
+
+.sub_page .hero_area {
+  height: auto; /* Altura automática para las subpáginas */
+}
+
+.custom_menu-btn {
+  z-index: 9; /* Nivel de superposición */
+  position: absolute; /* Posición absoluta para situar el botón */
+  right: 15px; /* Posición a 15px de la derecha */
+  top: 14px; /* Posición a 14px de la parte superior */
+}
+
+.custom_menu-btn button {
+  margin-top: 12px; /* Margen superior de 12px */
+  outline: none; /* Sin borde de enfoque */
+  border: none; /* Sin borde */
+  background-color: transparent; /* Fondo transparente */
+}
+
+.custom_menu-btn span {
+  display: block; /* Mostrar como bloque */
+  width: 35px; /* Ancho de 35px */
+  height: 5px; /* Altura de 5px */
+  background-color: #fff; /* Color de fondo blanco */
+  margin: 7px 0; /* Márgenes verticales de 7px */
+  -webkit-transition: all .3s; /* Transición para navegadores WebKit */
+  transition: all .3s; /* Transición para todos los navegadores */
+}
+
+.custom_menu-btn .custom_menu-btn .s-2 {
+  -webkit-transition: all .1s; /* Transición más rápida para WebKit */
+  transition: all .1s; /* Transición más rápida */
+}
+
+.menu_btn-style button .s-1 {
+  -webkit-transform: rotate(45deg) translateY(17px); /* Rotar y trasladar para WebKit */
+  transform: rotate(45deg) translateY(17px); /* Rotar y trasladar */
+}
+
+.menu_btn-style button .s-2 {
+  -webkit-transform: translateX(100px); /* Trasladar en X para WebKit */
+  transform: translateX(100px); /* Trasladar en X */
+}
+
+.menu_btn-style button .s-3 {
+  -webkit-transform: rotate(-45deg) translateY(-17px); /* Rotar y trasladar para WebKit */
+  transform: rotate(-45deg) translateY(-17px); /* Rotar y trasladar */
+}
+
+.overlay {
+  height: 100%; /* Altura completa */
+  width: 0; /* Ancho inicial de 0 */
+  position: fixed; /* Posición fija */
+  z-index: 1; /* Nivel de superposición */
+  top: 0; /* Posición superior a 0 */
+  left: 0; /* Posición izquierda a 0 */
+  background-color: black; /* Fondo negro */
+  background-color: rgba(0, 0, 0, 0.9); /* Fondo negro con transparencia */
+  overflow-x: hidden; /* Ocultar el desbordamiento horizontal */
+  -webkit-transition: 0.5s; /* Transición para WebKit */
+  transition: 0.5s; /* Transición */
+}
+
+.overlay .closebtn {
+  position: absolute; /* Posición absoluta */
+  top: 0; /* Posición superior a 0 */
+  right: 30px; /* Posición derecha a 30px */
+  font-size: 60px; /* Tamaño de fuente de 60px */
+}
+
+.overlay a {
+  padding: 0px; /* Sin relleno */
+  text-decoration: none; /* Sin subrayado */
+  font-size: 22px; /* Tamaño de fuente de 22px */
+  color: #f1f1f1; /* Color de texto claro */
+  display: block; /* Mostrar como bloque */
+  -webkit-transition: 0.3s; /* Transición para WebKit */
+  transition: 0.3s; /* Transición */
+}
+
+.overlay-content {
+  position: relative; /* Posición relativa */
+  top: 25%; /* Posición superior a 25% */
+  width: 100%; /* Ancho completo */
+  text-align: center; /* Centrar texto */
+  margin-top: 30px; /* Margen superior de 30px */
+}
+
+.menu_width {
+  width: 100%; /* Ancho completo */
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none; /* Sin subrayado en los enlaces */
+}
+
+a:hover,
+a:focus {
+  color: initial; /* Color de enlace inicial */
+}
+
+.navbar-brand img {
+  width: 40px; /* Ancho de 40px para la imagen de la marca */
+  margin-right: 5px; /* Margen derecho de 5px */
+}
+
+.navbar-brand span {
+  text-transform: uppercase; /* Texto en mayúsculas */
+  font-size: 24px; /* Tamaño de fuente de 24px */
+  font-weight: 700; /* Fuente negrita */
+  color: #00405E; /* Color del texto */
+  margin-top: 5px; /* Margen superior de 5px */
+}
+
+.custom_nav-container {
+  z-index: 99999; /* Nivel de superposición muy alto */
+  padding: 15px 0; /* Relleno superior e inferior de 15px */
+}
+
+/* Sección de contacto */
+
+/* CSS específico para la sección de contacto */
+.contact_section {
+  display: flex; /* Usamos flexbox para esta sección */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  flex-direction: column; /* Mostrar elementos en columna */
+}
+
+.contact-container {
+  width: 100%; /* Ancho completo */
+  max-width: 1000px; /* Ancho máximo de 1000px */
+}
+
+.contact_form-container input,
+.contact_form-container button {
+  width: 50%; /* Los inputs y botones ocupan el 50% del ancho */
+  margin-bottom: 15px; /* Margen inferior de 15px */
+}
+
+.contact_section h2 {
+  font-size: 26px; /* Tamaño de fuente de 26px */
+  color: #da6714; /* Color del texto */
+  font-weight: 600; /* Fuente semi-negrita */
+  font-family: 'Raleway', sans-serif; /* Fuente Raleway */
+  margin-bottom: 35px; /* Margen inferior de 35px */
+}
+
+.contact_section .row {
+  -webkit-box-align: center; /* Alinear verticalmente en WebKit */
+  -ms-flex-align: center; /* Alinear verticalmente en IE */
+  align-items: center; /* Alinear verticalmente */
+}
+
+.contact_section input {
+  border: none; /* Sin borde */
+  outline: none; /* Sin borde de enfoque */
+  border-bottom: 1px solid #000; /* Borde inferior negro */
+  color: #da6714; /* Color del texto */
+  width: 90%; /* Ancho del 90% */
+  margin: 15px 0; /* Márgenes verticales de 15px */
+  background-color: transparent; /* Fondo transparente */
+}
+
+.contact_section input::-webkit-input-placeholder {
+  color: #da6714; /* Color del placeholder en WebKit */
+  font-size: 14px; /* Tamaño de fuente del placeholder */
+}
+
+.contact_section input:-ms-input-placeholder {
+  color: #da6714; /* Color del placeholder en IE */
+  font-size: 14px; /* Tamaño de fuente del placeholder */
+}
+
+.contact_section input::-ms-input-placeholder {
+  color: #da6714; /* Color del placeholder en Edge */
+  font-size: 14px; /* Tamaño de fuente del placeholder */
+}
+
+.contact_section input::placeholder {
+  color: #da6714; /* Color del placeholder en otros navegadores */
+  font-size: 14px; /* Tamaño de fuente del placeholder */
+}
+
+.contact_form-container button {
+  border: none; /* Sin borde */
+  background-color: #da6714; /* Color de fondo */
+  color: #fff; /* Color del texto blanco */
+  font-size: 15px; /* Tamaño de fuente de 15px */
+  padding: 15px 45px; /* Relleno de 15px en vertical y 45px en horizontal */
+  border-radius: 30px; /* Bordes redondeados */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  font-weight: bold; /* Texto en negrita */
+}
+
+.contact_img-box img {
+  width: 100%; /* Ancho completo para la imagen */
+}
+
+/* end contact section */
+/* info section */
+.info_section {
+  background-color: #363636; /* Color de fondo */
+  color: #ffffff; /* Color del texto */
+  font-family: 'Poppins', sans-serif; /* Familia de fuente */
+}
+
+.info_logo-box {
+  display: flex; /* Mostrar como flexbox */
+  justify-content: center; /* Centrar el contenido horizontalmente */
+}
+
+.info_logo-box h2 {
+  font-weight: bold; /* Texto en negrita */
+  padding: 5px 35px; /* Relleno de 5px en vertical y 35px en horizontal */
+  border-bottom: 1.5px solid #da6714; /* Borde inferior */
+}
+
+.info_section ul {
+  padding: 0; /* Sin relleno */
+}
+
+.info_section ul li {
+  list-style-type: none; /* Sin estilo de lista */
+  margin: 3px 0; /* Margen de 3px en vertical */
+}
+
+.info_section ul li a {
+  color: #ffffff; /* Color del enlace */
+}
+
+.info_section ul li a:hover {
+  color: #da6714; /* Color del enlace al pasar el cursor */
+}
+
+.info_section .form_container input {
+  width: 225px; /* Ancho del input */
+  height: 40px; /* Alto del input */
+  padding: 10px; /* Relleno */
+}
+
+.info_section .form_container::-webkit-input-placeholder {
+  color: #ccc8c8; /* Color del placeholder en navegadores Webkit */
+}
+
+.info_section .form_container:-ms-input-placeholder {
+  color: #ccc8c8; /* Color del placeholder en navegadores Microsoft */
+}
+
+.info_section .form_container::-ms-input-placeholder {
+  color: #ccc8c8; /* Color del placeholder en navegadores Microsoft */
+}
+
+.info_section .form_container::placeholder {
+  color: #ccc8c8; /* Color del placeholder en otros navegadores */
+}
+
+/* Botón suscribirse */
+.info_section .form_container button {
+  background-color: #da6714; /* Color de fondo */
+  border: none; /* Sin borde */
+  outline: none; /* Sin contorno */
+  color: #fff; /* Color del texto */
+  padding: 8px 30px; /* Relleno de 8px en vertical y 30px en horizontal */
+  margin-top: 15px; /* Margen superior */
+  font-size: 15px; /* Tamaño de fuente */
+  text-transform: uppercase; /* Texto en mayúsculas */
+}
+
+/* Contenedor logos */
+.social_container {
+  width: 95%; /* Ancho del contenedor */
+  margin: 0 auto; /* Centrar el contenedor */
+  border-top: 1px solid #898989; /* Borde superior */
+  padding: 25px 0; /* Relleno de 25px en vertical */
+}
+
+/* Ubicación logos */
+.info_section .social-box {
+  margin: 0 auto; /* Centrar el contenedor */
+  width: 400px; /* Ancho del contenedor */
+  display: flex; /* Mostrar como flexbox */
+  justify-content: center; /* Centrar el contenido horizontalmente */
+}
+
+/* Margen logos */
+.info_section .social-box img {
+  width: 35px; /* Ancho de la imagen */
+  margin-right: 5px; /* Margen derecho */
+}
+
+/* end info section */
+/* derechos reservados */
+.footer_section {
+  background-color: #da6714; /* Color de fondo */
+  padding: 20px; /* Relleno */
+}
+
+.footer_section p {
+  margin: 0; /* Sin margen */
+  text-align: center; /* Alinear el texto al centro */
+  color: #fefdfc; /* Color del texto */
+}
+
+/* contact section */
+.contact_section {
+  background-color: #00405E; /* Color de fondo */
+  background-repeat: no-repeat; /* Sin repetición de fondo */
+  background-position: center; /* Posición centrada del fondo */
+  background-size: cover; /* Tamaño del fondo cubriendo todo el área */
+  background-image: url("/images/FondoNoLogo.png"); /* Imagen de fondo */
+  height: 800px; /* Altura de la sección */
+}
+
+/* Estilos para centrar y hacer el video y canvas responsivos */
+.video-container {
+  display: flex; /* Mostrar como flexbox */
+  justify-content: center; /* Centrar el contenido horizontalmente */
+  align-items: center; /* Centrar el contenido verticalmente */
+  height: 100%; /* Altura completa */
+  width: 100%; /* Ancho completo */
+}
+
+video, canvas {
+  width: 100%; /* Ancho completo */
+  max-width: 640px; /* Ancho máximo */
+  height: auto; /* Altura automática */
+  border: 2px solid #da6714; /* Borde */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+
+
+.toggle1 {
+  margin: 4px; /* Margen */
+  display: inline-block; /* Mostrar como bloque en línea */
+}
+
+.toggle1 {
+  box-shadow: inset 0 0 35px 5px rgba(0, 0, 0, 0.25), inset 0 2px 1px 1px rgba(255, 255, 255, 0.9), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.25); /* Sombra interna */
+  border-radius: 8px; /* Bordes redondeados */
+  background: #ccd0d4; /* Color de fondo */
+  position: relative; /* Posición relativa */
+  height: 140px; /* Altura */
+  width: 140px; /* Ancho */
+}
+
+.toggle1:before {
+  box-shadow: 0 0 17.5px 8.75px #fff; /* Sombra */
+  border-radius: 118.3px; /* Bordes redondeados */
+  background: #fff; /* Color de fondo */
+  position: absolute; /* Posición absoluta */
+  margin-left: -50.4px; /* Margen izquierdo */
+  margin-top: -50.4px; /* Margen superior */
+  opacity: 0.2; /* Opacidad */
+  content: ""; /* Contenido vacío */
+  height: 100.8px; /* Altura */
+  width: 100.8px; /* Ancho */
+  left: 50%; /* A la izquierda del 50% */
+  top: 50%; /* A la parte superior del 50% */
+}
+
+.toggle1 .button {
+  filter: blur(1px); /* Desenfoque */
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1); /* Transición */
+  box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5), inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 3px 4px -1px rgba(255, 255, 255, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.8), inset 0 20px 30px 0 rgba(255, 255, 255, 0.2); /* Sombra */
+  border-radius: 96.32px; /* Bordes redondeados */
+  position: absolute; /* Posición absoluta */
+  background: #ccd0d4; /* Color de fondo */
+  margin-left: -48.16px; /* Margen izquierdo */
+  margin-top: -48.16px; /* Margen superior */
+  display: block; /* Mostrar como bloque */
+  height: 96.32px; /* Altura */
+  width: 96.32px; /* Ancho */
+  left: 50%; /* A la izquierda del 50% */
+  top: 50%; /* A la parte superior del 50% */
+}
+
+.toggle1 .label {
+  transition: color 300ms ease-out; /* Transición del color */
+  text-shadow: 1px 1px 3px #ccd0d4, 0 0 0 rgba(0, 0, 0, 0.8), 1px 1px 4px #fff; /* Sombra del texto */
+  line-height: 139px; /* Altura de línea */
+  text-align: center; /* Alinear el texto al centro */
+  position: absolute; /* Posición absoluta */
+  font-weight: 700; /* Texto en negrita */
+  font-size: 42px; /* Tamaño de fuente */
+  display: block; /* Mostrar como bloque */
+  opacity: 0.9; /* Opacidad */
+  height: 100%; /* Altura completa */
+  width: 100%; /* Ancho completo */
+  color: rgba(0, 0, 0, 0.4); /* Color del texto */
+}
+
+.toggle1:checked ~ .button {
+  filter: blur(0); /* Sin desenfoque */
+  box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5), inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 3px 4px -1px rgba(255, 255, 255, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.8), inset 0 20px 30px 0 rgba(255, 255, 255, 0.2); /* Sombra */
+  border-radius: 96.32px; /* Bordes redondeados */
+  background: #da6714; /* Color de fondo */
+  margin-left: -48.16px; /* Margen izquierdo */
+  margin-top: -48.16px; /* Margen superior */
+  height: 96.32px; /* Altura */
+  width: 96.32px; /* Ancho */
+  left: 50%; /* A la izquierda del 50% */
+  top: 50%; /* A la parte superior del 50% */
+}
+.toggle1 .label {
+  transition: color 300ms ease-out; /* Transición del color */
+  text-shadow: 1px 1px 3px #ccd0d4, 0 0 0 rgba(0, 0, 0, 0.8), 1px 1px 4px #fff; /* Sombra del texto */
+  line-height: 139px; /* Altura de línea */
+  text-align: center; /* Alineación del texto */
+  position: absolute; /* Posición */
+  font-weight: 700; /* Peso de la fuente */
+  font-size: 42px; /* Tamaño de la fuente */
+  display: block; /* Mostrar como bloque */
+  opacity: 0.9; /* Opacidad */
+  height: 100%; /* Altura */
+  width: 100%; /* Ancho */
+  color: rgba(0, 0, 0, 0.4); /* Color del texto */
+}
+
+.toggle1 input {
+  opacity: 0; /* Opacidad */
+  position: absolute; /* Posición */
+  cursor: pointer; /* Cursor */
+  z-index: 1; /* Índice Z */
+  height: 100%; /* Altura */
+  width: 100%; /* Ancho */
+  left: 0; /* Izquierda */
+  top: 0; /* Arriba */
+}
+
+.toggle1 input:active ~ .button {
+  box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6); /* Sombra */
+}
+
+.toggle1 input:active ~ .label {
+  font-size: 40px; /* Tamaño de la fuente */
+  color: rgba(0, 0, 0, 0.45); /* Color del texto */
+}
+
+.toggle1 input:checked ~ .button {
+  box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 25px -1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 20px 0 rgba(0, 0, 0, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.6); /* Sombra */
+}
+
+.toggle1 input:checked ~ .label {
+  font-size: 40px; /* Tamaño de la fuente */
+  color: rgba(0, 0, 0, 0.4); /* Color del texto */
+}
+
+.toggle2 {
+  margin: 4px; /* Margen */
+  display: inline-block; /* Mostrar como bloque en línea */
+}
+
+.toggle2 {
+  box-shadow: inset 0 0 35px 5px rgba(0, 0, 0, 0.25), inset 0 2px 1px 1px rgba(255, 255, 255, 0.9), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.25); /* Sombra */
+  border-radius: 8px; /* Bordes redondeados */
+  background: #ccd0d4; /* Color de fondo */
+  position: relative; /* Posición */
+  height: 140px; /* Altura */
+  width: 140px; /* Ancho */
+}
+
+.toggle2:before {
+  box-shadow: 0 0 17.5px 8.75px #fff; /* Sombra */
+  border-radius: 118.3px; /* Bordes redondeados */
+  background: #fff; /* Color de fondo */
+  position: absolute; /* Posición */
+  margin-left: -50.4px; /* Margen izquierdo */
+  margin-top: -50.4px; /* Margen superior */
+  opacity: 0.2; /* Opacidad */
+  content: ""; /* Contenido vacío */
+  height: 100.8px; /* Altura */
+  width: 100.8px; /* Ancho */
+  left: 50%; /* A la izquierda del 50% */
+  top: 50%; /* A la parte superior del 50% */
+}
+
+.toggle2 .button {
+  -webkit-filter: blur(1px); /* Filtro de desenfoque */
+  -moz-filter: blur(1px); /* Filtro de desenfoque */
+  filter: blur(1px); /* Filtro de desenfoque */
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1); /* Transición */
+  box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5), inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 3px 4px -1px rgba(255, 255, 255, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.8), inset 0 20px 30px 0 rgba(255, 255, 255, 0.2); /* Sombra */
+  border-radius: 96.32px; /* Bordes redondeados */
+  position: absolute; /* Posición */
+  background: #ccd0d4; /* Color de fondo */
+  margin-left: -48.16px; /* Margen izquierdo */
+  margin-top: -48.16px; /* Margen superior */
+  display: block; /* Mostrar como bloque */
+  height: 96.32px; /* Altura */
+  width: 96.32px; /* Ancho */
+  left: 50%; /* A la izquierda del 50% */
+  top: 50%; /* A la parte superior del 50% */
+}
+
+.toggle2 .label {
+  transition: color 300ms ease-out; /* Transición del color */
+  text-shadow: 1px 1px 3px #ccd0d4, 0 0 0 rgba(0, 0, 0, 0.8), 1px 1px 4px #fff; /* Sombra del texto */
+  line-height: 139px; /* Altura de línea */
+  text-align: center; /* Alineación del texto */
+  position: absolute; /* Posición */
+  font-weight: 700; /* Peso de la fuente */
+  font-size: 42px; /* Tamaño de la fuente */
+  display: block; /* Mostrar como bloque */
+  opacity: 0.9; /* Opacidad */
+  height: 100%; /* Altura */
+  width: 100%; /* Ancho */
+  color: rgba(0, 0, 0, 0.4); /* Color del texto */
+}
+
+.toggle2 input {
+  opacity: 0; /* Opacidad */
+  position: absolute; /* Posición */
+  cursor: pointer; /* Cursor */
+  z-index: 1; /* Índice Z */
+  height: 100%; /* Altura */
+  width: 100%; /* Ancho */
+  left: 0; /* Izquierda */
+  top: 0; /* Arriba */
+}
+
+.toggle2 input:active ~ .button {
+  box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6); /* Sombra */
+}
+
+.toggle2 input:active ~ .label {
+  font-size: 40px; /* Tamaño de la fuente */
+  color: rgba(0, 0, 0, 0.45); /* Color del texto */
+}
+
+.toggle2 input:checked ~ .button {
+  box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 25px -1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 20px 0 rgba(0, 0, 0, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.6); /* Sombra */
+}
+
+.toggle2 input:checked ~ .label {
+  font-size: 40px; /* Tamaño de la fuente */
+  color: rgba(0, 0, 0, 0.4); /* Color del texto */
+}
+
+.toggle3 {
+  margin: 4px; /* Margen */
+  display: inline-block; /* Mostrar como bloque en línea */
+}
+
+.toggle3 {
+  box-shadow: inset 0 0 35px 5px rgba(0, 0, 0, 0.25), inset 0 2px 1px 1px rgba(255, 255, 255, 0.9), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.25); /* Sombra */
+  border-radius: 8px; /* Bordes redondeados */
+  background: #ccd0d4; /* Color de fondo */
+  position: relative; /* Posición */
+  height: 140px; /* Altura */
+  width: 140px; /* Ancho */
+}
+
+.toggle3:before {
+  box-shadow: 0 0 17.5px 8.75px #fff; /* Sombra */
+  border-radius: 118.3px; /* Bordes redondeados */
+  background: #fff; /* Color de fondo */
+  position: absolute; /* Posición */
+  margin-left: -50.4px; /* Margen izquierdo */
+  margin-top: -50.4px; /* Margen superior */
+  opacity: 0.2; /* Opacidad */
+  content: ""; /* Contenido vacío */
+  height: 100.8px; /* Altura */
+  width: 100.8px; /* Ancho */
+  left: 50%; /* A la izquierda del 50% */
+  top: 50%; /* A la parte superior del 50% */
+}
+
+.toggle3 .button {
+  -webkit-filter: blur(1px); /* Filtro de desenfoque */
+  -moz-filter: blur(1px); /* Filtro de desenfoque */
+  filter: blur(1px); /* Filtro de desenfoque */
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1); /* Transición */
+  box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5), inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 3px 4px -1px rgba(255, 255, 255, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.8), inset 0 20px 30px 0 rgba(255, 255, 255, 0.2); /* Sombra */
+  border-radius: 96.32px; /* Bordes redondeados */
+  position: absolute; /* Posición */
+  background: #ccd0d4; /* Color de fondo */
+  margin-left: -48.16px; /* Margen izquierdo */
+  margin-top: -48.16px; /* Margen superior */
+  display: block; /* Mostrar como bloque */
+  height: 96.32px; /* Altura */
+  width: 96.32px; /* Ancho */
+  left: 50%; /* A la izquierda del 50% */
+  top: 50%; /* A la parte superior del 50% */
+}
+
+.toggle3 .label {
+  transition: color 300ms ease-out; /* Transición del color */
+  text-shadow: 1px 1px 3px #ccd0d4, 0 0 0 rgba(0, 0, 0, 0.8), 1px 1px 4px #fff; /* Sombra del texto */
+  line-height: 139px; /* Altura de línea */
+  text-align: center; /* Alineación del texto */
+  position: absolute; /* Posición */
+  font-weight: 700; /* Peso de la fuente */
+  font-size: 42px; /* Tamaño de la fuente */
+  display: block; /* Mostrar como bloque */
+  opacity: 0.9; /* Opacidad */
+  height: 100%; /* Altura */
+  width: 100%; /* Ancho */
+  color: rgba(0, 0, 0, 0.4); /* Color del texto */
+}
+
+.toggle3 input {
+  opacity: 0; /* Opacidad */
+  position: absolute; /* Posición */
+  cursor: pointer; /* Cursor */
+  z-index: 1; /* Índice Z */
+  height: 100%; /* Altura */
+  width: 100%; /* Ancho */
+  left: 0; /* Izquierda */
+  top: 0; /* Arriba */
+}
+
+.toggle3 input:active ~ .button {
+  box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6); /* Sombra */
+}
+
+.toggle3 input:active ~ .label {
+  font-size: 40px; /* Tamaño de la fuente */
+  color: rgba(0, 0, 0, 0.45); /* Color del texto */
+}
+
+.toggle3 input:checked ~ .button {
+  box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 25px -1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 20px 0 rgba(0, 0, 0, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.6); /* Sombra */
+}
+
+.toggle3 input:checked ~ .label {
+  font-size: 40px; /* Tamaño de la fuente */
+  color: rgba(0, 0, 0, 0.4); /* Color del texto */
+}
+
+.main {
+  width: 350px; /* Ancho */
+  height: 500px; /* Altura */
+  background: red; /* Color de fondo */
+  overflow: hidden; /* Ocultar desbordamiento */
+  background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/cover; /* Imagen de fondo */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 5px 20px 50px #000; /* Sombra */
+}
+
+#chk {
+  display: none; /* No mostrar */
+}
+
+.signup {
+  position: relative; /* Posición relativa */
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Altura completa */
+}
+
+label {
+  color: #fff; /* Color del texto */
+  font-size: 2.3em; /* Tamaño de la fuente */
+  justify-content: center; /* Alinear al centro */
+  display: flex; /* Mostrar como flexbox */
+  margin: 50px; /* Margen */
+  font-weight: bold; /* Peso de la fuente */
+  cursor: pointer; /* Cursor */
+  transition: 0.5s ease-in-out; /* Transición */
+}
+
+input {
+  width: 60%; /* Ancho */
+  height: 10px; /* Altura */
+  background: #e0dede; /* Color de fondo */
+  justify-content: center; /* Alinear al centro */
+  display: flex; /* Mostrar como flexbox */
+  margin: 20px auto; /* Margen */
+  padding: 12px; /* Relleno */
+  border: none; /* Sin borde */
+  outline: none; /* Sin contorno */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+button {
+  width: 60%; /* Ancho */
+  height: 40px; /* Altura */
+  margin: 10px auto; /* Margen */
+  justify-content: center; /* Alinear al centro */
+  display: block; /* Mostrar como bloque */
+  color: #fff; /* Color del texto */
+  background: #da6714; /* Color de fondo */
+  font-size: 1em; /* Tamaño de la fuente */
+  font-weight: bold; /* Peso de la fuente */
+  margin-top: 30px; /* Margen superior */
+  outline: none; /* Sin contorno */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: 0.2s ease-in; /* Transición */
+  cursor: pointer; /* Cursor */
+}
+
+.login {
+  height: 460px; /* Altura */
+  background: #eee; /* Color de fondo */
+  border-radius: 60% / 10%; /* Bordes redondeados */
+  transform: translateY(-180px); /* Transformación */
+  transition: 0.8s ease-in-out; /* Transición */
+}
+
+.login label {
+  color: #da6714; /* Color del texto */
+  transform: scale(0.6); /* Escalado */
+}
+
+#chk:checked ~ .login {
+  transform: translateY(-500px); /* Transformación */
+}
+
+#chk:checked ~ .login label {
+  transform: scale(1); /* Escalado */
+}
+
+#chk:checked ~ .signup label {
+  transform: scale(0.6); /* Escalado */
+}
+
+/* Contenedor principal que usa Flexbox para alinear a la derecha */
+.container {
+  display: flex; /* Mostrar como flexbox */
+  justify-content: center; /* Alinear al centro */
+  padding: 50px; /* Añade un poco de padding para separación */
+}
+
+/* Ajusta el logo para ser más grande y responsivo */
+.logo-container .logo img {
+  max-width: 100%; /* Asegura que el logo no exceda el ancho del contenedor */
+  height: auto; /* Mantiene la proporción del logo */
+  width: 200px; /* Tamaño inicial del logo, ajusta según necesites */
+}
+
+
+
+.titlegesture span {
+  text-transform: uppercase; /* Texto en mayúsculas */
+  font-size: 24px; /* Tamaño de la fuente */
+  font-weight: 700; /* Peso de la fuente */
+  color: #da6714; /* Color del texto */
+  margin-top: 5px; /* Margen superior */
+}
+
+.acercade span {
+  text-transform: uppercase; /* Texto en mayúsculas */
+  font-size: 12px; /* Tamaño de la fuente */
+  font-weight: 400; /* Peso de la fuente */
+  color: #ffffff; /* Color del texto */
+  margin-top: 5px; /* Margen superior */
+}
+

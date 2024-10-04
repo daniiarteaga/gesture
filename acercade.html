@@ -1,0 +1,227 @@
+<!DOCTYPE html> <!-- Declara el tipo de documento como HTML5 -->
+<html> <!-- Inicia el elemento raíz de un documento HTML -->
+<head>
+  <!-- Básico -->
+  <meta charset="utf-8" /> <!-- Configura la codificación de caracteres como UTF-8 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Configura el modo de compatibilidad con IE -->
+  
+  <!-- Metadatos para móviles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> <!-- Configura la vista para dispositivos móviles -->
+  
+  <!-- Metadatos del sitio -->
+  <meta name="keywords" content="" /> <!-- Define palabras clave del sitio -->
+  <meta name="description" content="" /> <!-- Define la descripción del sitio -->
+  <meta name="author" content="" /> <!-- Define el autor del sitio -->
+
+  <title>GESTURE GENIUS</title> <!-- Establece el título del documento -->
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" /> <!-- Enlaza la hoja de estilos de Bootstrap -->
+  
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700|Raleway:400,700&display=swap" rel="stylesheet" /> <!-- Enlaza fuentes de Google Fonts -->
+  
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" /> <!-- Enlaza la hoja de estilos personalizada -->
+  
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" /> <!-- Enlaza la hoja de estilos responsive -->
+
+  <!-- Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script> <!-- Incluye Firebase (biblioteca JavaScript para aplicaciones web) -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script> <!-- Incluye Firebase Authentication (autenticación de Firebase) -->
+  <script src="js/jquery-3.4.1.min.js"></script> <!-- Incluye jQuery (biblioteca de JavaScript) -->
+  <script src="js/bootstrap.js"></script> <!-- Incluye Bootstrap (biblioteca de CSS y JS para diseño responsivo) -->
+  <script src="js/script.js"></script> <!-- Incluye script personalizado -->
+
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              ACERCA DE <!-- Enlace al inicio con texto "ACERCA DE" -->
+            </span>
+          </a>
+
+          <div class="navbar-collapse" id="">
+            <div class="custom_menu-btn">
+              <button onclick="openNav()">
+                <span class="s-1"> </span>
+                <span class="s-2"> </span>
+                <span class="s-3"> </span>
+              </button>
+            </div>
+            <div id="myNav" class="overlay">
+              <div class="overlay-content">
+                <span id="user-status" style="color: white;"></span> <!-- Estado del usuario -->
+
+                <a href="index.html">INICIO</a> <!-- Enlace al inicio -->
+                <a href="gestos.html" id="gestos-link">GESTOS</a> <!-- Enlace a la página de gestos -->
+                <a href="acercade.html">ACERCA DE </a> <!-- Enlace a la página "Acerca de" -->
+                <a href="contactenos.html">CONTACTENOS</a> <!-- Enlace a la página de contacto -->
+                <div id="auth-status" class="auth-status">
+                  <button id="logout-button" style="display:none;">CERRAR SESION</button> <!-- Botón para cerrar sesión -->
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- info  -->
+  
+  <section class="contact_section layout_padding">
+    <div class="logo-container">
+      <div class="logo">
+        <a href="#">
+          <img src="images/logisimo.png" alt="Logo"> <!-- Imagen del logo -->
+        </a>
+      </div>
+    </div>
+    <div class="container">
+      
+      <div class="row">
+        <div class="col-md-6">
+          <a class="titlegesture">
+            <span>
+              Bienvenidos a GESTURE GENIUS <!-- Título principal -->
+            </span>
+          </a>
+          <br>
+          <br>
+          
+          <h7>
+            <a class="acercade">
+              <span> 
+          En Gesture Genius, nos dedicamos a mejorar la calidad de vida de las personas con discapacidades auditivas mediante el uso de tecnología avanzada. Nuestro proyecto se centra en el desarrollo de un sistema de control de dispositivos utilizando técnicas de reconocimiento de señas, permitiendo a los usuarios interactuar de manera efectiva y eficiente con sus dispositivos electrónicos.
+        </span>
+      </a>
+          <br>
+          <br>
+          <a class="titlegesture">
+            <span>
+            ¿Quiénes Somos? <!-- Título de la sección "¿Quiénes Somos?" -->
+            </span>
+          </a>
+          <br>
+          <br>
+          <h7>
+            <a class="acercade">
+              <span> 
+            Somos un equipo comprometido de ingenieros y desarrolladores apasionados por la tecnología y la inclusión. Nuestro proyecto de grado, titulado "Implementación de un Sistema de Control de Dispositivos para Personas con Discapacidad Auditiva Utilizando Técnicas de Reconocimiento de Señas", es un testimonio de nuestra dedicación a crear soluciones accesibles y efectivas para todos.</h7>
+          </span>
+        </a>
+          </div>
+        <div class="col-md-6">
+
+          <div class="toggle-btn active" id="act">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- fin info -->
+
+  <!-- info section -->
+  <section class="info_section layout_padding-top">
+    <div class="info_logo-box">
+      <h2>
+        GESTURE GENIUS <!-- Título del logo -->
+      </h2>
+    </div>
+    <div class="container layout_padding2">
+      <div class="row">
+        <div class="col-md-3">
+          <h5>
+            Acerca de <!-- Sección "Acerca de" -->
+          </h5>
+          <p>
+            Tu poderoso aliado para iluminar tu camino mediante comandos de voz y gestos. Descubre una experiencia única y moderna al controlar tus luces de forma intuitiva y sin esfuerzo.
+          </p>
+        </div>
+        <div class="col-md-3">
+          <h5>
+            Link utiles <!-- Enlaces útiles -->
+          </h5>
+          <ul>
+            <li>
+              <a href="">
+                Video juegos <!-- Enlace a video juegos -->
+              </a>
+            </li>
+            <li>
+              <a href="">
+                Control remoto <!-- Enlace a control remoto -->
+              </a>
+            </li>
+            <li>
+              <a href="">
+                Controlador 3D <!-- Enlace a controlador 3D -->
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>
+            Contactenos <!-- Contacto -->
+          </h5>
+          <p>
+            Contactenos para resolver sus dudas <!-- Información de contacto -->
+          </p>
+        </div>
+        <div class="col-md-3">
+
+          <div class="subscribe_container">
+            <h5>
+              Noticias <!-- Sección de noticias -->
+            </h5>
+            <div class="form_container">
+              <form action="">
+                <input type="email" placeholder="Enter your email"> <!-- Campo para ingresar el correo -->
+                <button type="submit">
+                  Suscribirse <!-- Botón para suscribirse -->
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="social_container">
+
+        <div class="social-box">
+          <a href="">
+            <img src="images/fb.png" alt=""> 
+
+          <a href="">
+            <img src="images/twitter.png" alt=""> 
+          </a>
+
+          <a href="">
+            <img src="images/instagram.png" alt=""> 
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+    <p>
+      &copy; 2024 Todos los derechos reservados 
+      
+    </p>
+  </section>
+  <!-- footer section -->
+
+</body>
+</html>

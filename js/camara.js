@@ -15,23 +15,14 @@ function updateButtonState(button, isEnabled) {
 }
 
 // Variables para controlar el estado de los LEDs
-let previousX = null; // Posición X anterior para el movimiento
-let movementThreshold = 0.03; // Umbral para detectar movimiento significativo
+let previousX = null; // Posición X anterior para el movimiento horizontal
+let previousY = null; // Posición Y anterior para el movimiento vertical
+let movementThresholdX = 0.02; // Umbral para detectar movimiento horizontal significativo
+let movementThresholdY = 0.02; // Umbral para detectar movimiento vertical significativo
 
 // Función para verificar si un dedo está levantado
 function isFingerRaised(landmarks, fingerIndex) {
   return landmarks[fingerIndex].y < landmarks[fingerIndex + 2].y;
-}
-
-// Función para detectar cuántos dedos están levantados (índice, corazón, anular)
-function getRaisedFingers(landmarks) {
-  let raisedFingers = 0;
-  
-  if (isFingerRaised(landmarks, 8)) raisedFingers++;    // Índice
-  if (isFingerRaised(landmarks, 12)) raisedFingers++;   // Corazón
-  if (isFingerRaised(landmarks, 16)) raisedFingers++;   // Anular
-  
-  return raisedFingers;
 }
 // Elementos de la cámara y el canvas
 const videoElement = document.querySelector('.input_video');
@@ -46,83 +37,68 @@ function onResults(results) {
   if (results.multiHandLandmarks && results.multiHandedness) {
     for (let index = 0; index < results.multiHandLandmarks.length; index++) {
       const landmarks = results.multiHandLandmarks[index];
-      const raisedFingers = getRaisedFingers(landmarks); // Contamos los dedos levantados
 
-      if (raisedFingers > 0) {
-        const currentX = landmarks[8].x; // Usamos la posición X del dedo índice para calcular el movimiento
+      // Verificamos si el dedo índice está levantado
+      if (isFingerRaised(landmarks, 8)) {
+        const currentX = landmarks[8].x; // Posición X del dedo índice
+        const currentY = landmarks[8].y; // Posición Y del dedo índice
 
+        // Detectar movimiento horizontal (X) para el LED1
         if (previousX !== null) {
-          const movement = currentX - previousX;
+          const movementX = currentX - previousX;
 
-          if (movement < -movementThreshold) {
-            // Movimiento de derecha a izquierda
-            switch (raisedFingers) {
-              case 1:
-                console.log("Movimiento derecha a izquierda con 1 dedo (encender LED1)");
-                firebase.database().ref('LED/digital').update({ LED1: true })
-                  .then(() => {
-                    updateButtonState(led1Button, true);
-                    console.log('LED1 encendido');
-                  })
-                  .catch((error) => console.error("Error al encender LED1: ", error));
-                break;
-              case 2:
-                console.log("Movimiento derecha a izquierda con 2 dedos (encender LED2)");
-                firebase.database().ref('LED/digital').update({ LED2: true })
-                  .then(() => {
-                    updateButtonState(led2Button, true);
-                    console.log('LED2 encendido');
-                  })
-                  .catch((error) => console.error("Error al encender LED2: ", error));
-                break;
-              case 3:
-                console.log("Movimiento derecha a izquierda con 3 dedos (encender LED3)");
-                firebase.database().ref('LED/digital').update({ LED3: true })
-                  .then(() => {
-                    updateButtonState(led3Button, true);
-                    console.log('LED3 encendido');
-                  })
-                  .catch((error) => console.error("Error al encender LED3: ", error));
-                break;
-            }
-          } else if (movement > movementThreshold) {
-            // Movimiento de izquierda a derecha
-            switch (raisedFingers) {
-              case 1:
-                console.log("Movimiento izquierda a derecha con 1 dedo (apagar LED1)");
-                firebase.database().ref('LED/digital').update({ LED1: false })
-                  .then(() => {
-                    updateButtonState(led1Button, false);
-                    console.log('LED1 apagado');
-                  })
-                  .catch((error) => console.error("Error al apagar LED1: ", error));
-                break;
-              case 2:
-                console.log("Movimiento izquierda a derecha con 2 dedos (apagar LED2)");
-                firebase.database().ref('LED/digital').update({ LED2: false })
-                  .then(() => {
-                    updateButtonState(led2Button, false);
-                    console.log('LED2 apagado');
-                  })
-                  .catch((error) => console.error("Error al apagar LED2: ", error));
-                break;
-              case 3:
-                console.log("Movimiento izquierda a derecha con 3 dedos (apagar LED3)");
-                firebase.database().ref('LED/digital').update({ LED3: false })
-                  .then(() => {
-                    updateButtonState(led3Button, false);
-                    console.log('LED3 apagado');
-                  })
-                  .catch((error) => console.error("Error al apagar LED3: ", error));
-                break;
-            }
+          if (movementX > movementThresholdX) {
+            // Movimiento de izquierda a derecha (enciende LED1)
+            console.log("Movimiento izquierda a derecha (encender LED1)");
+            firebase.database().ref('LED/digital').update({ LED1: true })
+              .then(() => {
+                updateButtonState(led1Button, true);
+                console.log('LED1 encendido');
+              })
+              .catch((error) => console.error("Error al encender LED1: ", error));
+          } else if (movementX < -movementThresholdX) {
+            // Movimiento de derecha a izquierda (apaga LED1)
+            console.log("Movimiento derecha a izquierda (apagar LED1)");
+            firebase.database().ref('LED/digital').update({ LED1: false })
+              .then(() => {
+                updateButtonState(led1Button, false);
+                console.log('LED1 apagado');
+              })
+              .catch((error) => console.error("Error al apagar LED1: ", error));
           }
         }
 
-        // Actualizar la posición X anterior
+        // Detectar movimiento vertical (Y) para el LED2
+        if (previousY !== null) {
+          const movementY = currentY - previousY;
+
+          if (movementY < -movementThresholdY) {
+            // Movimiento de abajo a arriba (enciende LED2)
+            console.log("Movimiento de abajo a arriba (encender LED2)");
+            firebase.database().ref('LED/digital').update({ LED2: true })
+              .then(() => {
+                updateButtonState(led2Button, true);
+                console.log('LED2 encendido');
+              })
+              .catch((error) => console.error("Error al encender LED2: ", error));
+          } else if (movementY > movementThresholdY) {
+            // Movimiento de arriba a abajo (apaga LED2)
+            console.log("Movimiento de arriba a abajo (apagar LED2)");
+            firebase.database().ref('LED/digital').update({ LED2: false })
+              .then(() => {
+                updateButtonState(led2Button, false);
+                console.log('LED2 apagado');
+              })
+              .catch((error) => console.error("Error al apagar LED2: ", error));
+          }
+        }
+
+        // Actualizar las posiciones previas
         previousX = currentX;
+        previousY = currentY;
       } else {
-        previousX = null; // Si no hay dedos levantados, resetear la posición
+        previousX = null; // Si el dedo índice no está levantado, reiniciamos
+        previousY = null;
       }
     }
   }
